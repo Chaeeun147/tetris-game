@@ -1,2 +1,2 @@
-# tetris
+# Space Shooter
 
