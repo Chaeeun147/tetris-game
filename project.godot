@@ -10,9 +10,20 @@ config_version=5
 
 [application]
 
-config/name="Tetris"
+config/name="First Game"
+run/main_scene="uid://oabjqbwlxkox"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=450
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
