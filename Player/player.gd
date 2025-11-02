@@ -16,3 +16,7 @@ func _physics_process(delta):
 
 	vel = dirVec.normalized () * speed
 	position += vel * delta
+	#make sure we are within the screen
+	var viewRect = get_viewport().get_visible_rect()
+	position.x = clamp(position.x, 0, viewRect.size.x)
+	position.y = clamp(position.y, 0, viewRect.size.y)
