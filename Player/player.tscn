@@ -27,3 +27,6 @@ position = Vector2(-35, -10)
 
 [node name="RightGun" type="Node2D" parent="FiringPositions"]
 position = Vector2(35, -10)
+
+[node name="FireDelayTime" type="Timer" parent="."]
+one_shot = true
