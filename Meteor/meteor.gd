@@ -9,10 +9,15 @@ extends Area2D
 
 var speed : float = 0
 var rotationRate: float = 0
+var playerInArea: Player = null
 
 func _ready():
 	speed = randf_range(minSpeed, maxSpeed)
 	rotationRate = randf_range(minRotationRate, maxRotationRate)
+
+func _process(delta):
+	if playerInArea != null:
+		playerInArea.damage(1)
 
 func _physics_process(delta):
 	rotation_degrees += rotationRate * delta
@@ -27,3 +32,12 @@ func damage(amount: int):
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Player:
+		playerInArea = area 
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Player:
+		playerInArea = null

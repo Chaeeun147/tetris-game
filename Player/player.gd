@@ -1,4 +1,5 @@
 extends Area2D
+class_name Player
 
 var plBullet := preload("res://Bullet/bullet.tscn")
 
@@ -8,6 +9,7 @@ var plBullet := preload("res://Bullet/bullet.tscn")
 
 @export var speed: float = 100
 @export var fireDelay: float = 0.1
+@export var life: int = 3
 var vel := Vector2(0,0)
 
 func _process(delta):
@@ -44,3 +46,11 @@ func _physics_process(delta):
 	var viewRect := get_viewport_rect()
 	position.x = clamp(position.x, 0, viewRect.size.x)
 	position.y = clamp(position.y, 0, viewRect.size.y)
+
+func damage(amount: int):
+	life -= amount
+	print("Player Life = %s" % life)
+	
+	if life <= 0:
+		print("PLAYER DIED")
+		queue_free()

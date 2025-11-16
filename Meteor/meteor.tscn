@@ -16,6 +16,9 @@ visible = false
 polygon = PackedVector2Array(-44, -41, 14, -55, 59, -17, 68, 32, 16, 55, -22, 27, -53, 28, -67, -5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 rect = Rect2(-76, -60, 148, 116)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
