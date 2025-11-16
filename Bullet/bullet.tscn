@@ -8,6 +8,8 @@ radius = 5.0
 height = 34.0
 
 [node name="Bullet" type="Area2D"]
+gravity_point_center = Vector2(1, 1)
+gravity_direction = Vector2(1, 1)
 script = ExtResource("1_4qwpv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
