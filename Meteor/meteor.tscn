@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://qsbvmmeiorhb" path="res://Textures/meteorBig.png" id="1_omjit"]
 [ext_resource type="Script" uid="uid://bt2tjxxlkl1mc" path="res://Meteor/meteor.gd" id="1_v21uo"]
 
-[node name="Meteor" type="Area2D"]
+[node name="Meteor" type="Area2D" groups=["damageable"]]
 script = ExtResource("1_v21uo")
 minSpeed = 50.0
 maxSpeed = 80.0
